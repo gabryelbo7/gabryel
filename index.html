@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Para Izabel 💙</title>
-  <link rel="icon" href="data:image/svg+xml,svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
 
@@ -19,76 +19,75 @@
     }
 
     header {
-      padding: 60px 20px 30px;
+      padding: 80px 20px 40px;
       background: linear-gradient(to bottom, #ffe4ec, #fff);
-      animation: fadeIn 1.5s ease-in-out;
+      animation: fadeIn 2s ease-in-out;
     }
 
     header h1 {
       font-family: 'Dancing Script', cursive;
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       color: #ff6fa5;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     header p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #555;
       max-width: 600px;
       margin: 0 auto;
       opacity: 0;
-      animation: fadeInText 1.5s ease forwards 0.6s;
+      animation: fadeInText 2s ease forwards 1s;
     }
 
     section {
-      padding: 30px 15px;
+      padding: 40px 20px;
     }
 
     .message {
-      font-size: 1rem;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.8;
       max-width: 700px;
       margin: 0 auto;
       color: #444;
       background-color: #fff;
-      border-radius: 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 30px;
       opacity: 0;
-      animation: fadeInText 1.8s ease forwards 1s;
+      animation: fadeInText 2s ease forwards 1.5s;
     }
 
-    .gallery {
-      margin-top: 40px;
+    /* Galeria desktop */
+   .gallery {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 40px 10px;
+    }
+   .gallery img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border: 4px solid #ffb6c9;
+      box-shadow: 0 6px 20px rgba(255, 182, 201, 0.4);
+      border-radius: 16px;
+      transition: transform 0.3s ease;
     }
 
-    .gallery img {
-      width: 90%;
-      max-width: 360px;
-      height: auto;
-      border-radius: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, opacity 1s ease;
-      opacity: 0;
-      animation: fadeInImage 1.5s ease forwards;
-    }
-
-    .gallery img:nth-child(1) { animation-delay: 1.4s; }
-    .gallery img:nth-child(2) { animation-delay: 1.8s; }
-    .gallery img:nth-child(3) { animation-delay: 2.2s; }
+    .gallery img:nth-child(1) { animation-delay: 2.5s; }
+    .gallery img:nth-child(2) { animation-delay: 3s; }
+    .gallery img:nth-child(3) { animation-delay: 3.5s; }
 
     footer {
-      margin-top: 50px;
-      padding: 20px;
+      margin-top: 60px;
+      padding: 30px;
       font-family: 'Dancing Script', cursive;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       color: #ff6fa5;
       opacity: 0;
-      animation: fadeInText 1.5s ease forwards 2.8s;
+      animation: fadeInText 2s ease forwards 4s;
     }
 
     .heart {
@@ -96,42 +95,75 @@
       animation: pulse 1.4s infinite;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInText {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInImage {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.2); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
-    }
+    /* Animações */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInText { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInImage { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes pulse { 0% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); opacity: 0.8; } }
 
     /* Corações flutuando */
     .heart-float {
-      position: fixed;
-      bottom: 0;
+      position: absolute;
       color: #ff9ac3;
-      font-size: 18px;
-      animation: float 8s linear infinite;
-      opacity: 0.6;
+      font-size: 20px;
+      animation: float 10s linear infinite;
+      opacity: 0.7;
       pointer-events: none;
-      z-index: 0;
     }
 
     @keyframes float {
       0% { transform: translateY(100vh) scale(1); opacity: 0.8; }
       100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+    }
+
+    /* Carrossel móvel */
+    .carousel {
+      display: none;
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+      display: none;
+      border-radius: 20px;
+    }
+
+    .carousel img.active {
+      display: block;
+      animation: fadeInImage 1.2s ease forwards;
+    }
+
+    /* Sessão de vídeo */
+     .video-section {
+      padding: 40px 20px;
+      background-color: #ffe6ef;
+      border-top: 2px solid #ffb6c9;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+      }
+
+    video {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+    }
+
+
+    .video-text {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     /* Botão de música */
@@ -142,49 +174,65 @@
       background: #ff6fa5;
       border: none;
       color: white;
-      font-size: 15px;
+      font-size: 16px;
       border-radius: 50px;
-      padding: 10px 14px;
+      padding: 10px 16px;
       cursor: pointer;
       box-shadow: 0 3px 8px rgba(0,0,0,0.2);
       transition: background 0.3s ease;
-      z-index: 5;
     }
 
-    #musicButton:hover {
-      background: #ff4b88;
-    }
+    #musicButton:hover { background: #ff4b88; }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      .message { font-size: 0.95rem; padding: 20px; }
-      footer { font-size: 1.2rem; }
-      #musicButton { font-size: 14px; padding: 8px 12px; bottom: 10px; right: 10px; }
+    @media (max-width: 700px) {
+      .gallery { display: none; }
+      .carousel { display: block; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Para Izabel 💙</h1>
+    <h1>Para Izabel 💖</h1>
     <p>Conhecer você tem sido uma das melhores coisas que já me aconteceu.</p>
   </header>
 
   <section>
     <div class="message">
       <p>
-        Desde o momento em que te conheci, algo em mim mudou.  
-        Cada instante ao seu lado tem sido incrível.  
-        Você me faz querer planejar o futuro, sorrir por qualquer coisa e acreditar que o amor existe.  
-        Eu amo estar com você em todas as oportunidades — e mal posso esperar para viver muito mais ao seu lado.
+        Conhecer você tem sido inesquecível, simplesmente é uma mistura de sentimentos e paixão!
+        Desde do nosso primeiro encontro, momentos e beijos, tudo tem sido um espetáculo, cada 
+        vez mais quero estar presente e perto, meus sentimentos são grandes e sinceros!
+        Gostaria que soubesse tudo isso, que amo e estou apaixonado pela sua pessoa.
       </p>
     </div>
 
     <div class="gallery">
-      <img src="img1.jpg" alt="Gabryel e Izabel" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ffe4ec%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22%23ff6fa5%22>Imagem não encontrada</text></svg>'; this.alt='';">
-     <img src="img2.jpg" alt="Gabryel e Izabel" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ffe4ec%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22%23ff6fa5%22>Imagem não encontrada</text></svg>'; this.alt='';">
-      <img src="img3.jpg" alt="Gabryel e Izabel" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><rect width=%22100%25%22 height=%22100%25%22 fill=%22%23ffe4ec%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22%23ff6fa5%22>Imagem não encontrada</text></svg>'; this.alt='';">
+  <img src="img1.jpg" alt="Izabel">
+  <img src="img2.jpg" alt="Gabryel e Izabel">
+  <img src="img3.jpg" alt="Izabel com óculos">
+  <img src="img4.jpg" alt="Momentos juntos">
+  <img src="img5.jpg" alt="Sorriso lindo">
+  <img src="img6.jpg" alt="Dia especial">
+  <img src="img7.jpg" alt="Dia especial">
+</div>
+
+    <div class="carousel">
+      <img src="img4.jpg" class="active" alt="Izabel">
+      <img src="img5.jpg" alt="Gabryel e Izabel">
+      <img src="img6.jpg" alt="Izabel com óculos">
     </div>
+
+    <div class="video-section">
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video>
+      <div class="video-text">
+        <p>Que nossos momentos sejam ainda mais inesquecível, eu te amo Izabel! 💖</p>
+      </div>
+    </div>
+
   </section>
 
   <footer>
@@ -193,31 +241,30 @@
 
   <button id="musicButton">🎵 Tocar música</button>
   <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mp3">
+    <source src="https://www.dropbox.com/scl/fi/qx1dt2m9l2h4m1s5z0ipm/Sweet-Child-O-Mine.mp3?raw=1" type="audio/mp3">
   </audio>
 
   <script>
-    // Efeito de corações flutuando
+    // Corações flutuando
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart-float");
       heart.innerHTML = "❤";
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 5 + Math.random() * 4 + "s";
+      heart.style.animationDuration = 5 + Math.random() * 5 + "s";
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 9000);
+      setTimeout(() => heart.remove(), 10000);
     }
-    setInterval(createHeart, 900);
+    setInterval(createHeart, 800);
 
-    // Música de fundo
+    // Música
     const music = document.getElementById("bgMusic");
     const btn = document.getElementById("musicButton");
     let playing = false;
-
     btn.onclick = () => {
       if (!playing) {
         music.play();
-        btn.innerText = "⏸ Pausar música";
+        btn.innerText = "⏸️ Pausar música";
         playing = true;
       } else {
         music.pause();
@@ -225,6 +272,15 @@
         playing = false;
       }
     };
+
+    // Carrossel automático
+    const slides = document.querySelectorAll('.carousel img');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4000);
   </script>
 </body>
 </html>
