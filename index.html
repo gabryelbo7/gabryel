@@ -11,6 +11,20 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Linkando o arquivo JS externo (defer para carregar após o HTML) -->
     <script src="js/script.js" defer></script>
+    <style>
+        /* Ajuste para aumentar as fotos no celular */
+        @media (max-width: 768px) {
+            .galeria {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .foto {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 <body>
 
